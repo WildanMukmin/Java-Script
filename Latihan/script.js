@@ -1,20 +1,94 @@
-const penumpang = [];
+function Angkot (sopir, trayek, penumpang, kas){
+    this.sopir = sopir;
+    this.trayek = trayek;
+    this.penumpang = penumpang;
+    this.kas  = kas;
 
-function tambahPenumpang (nama , arr){
-    for(let i = 0; i < arr.length; i++){
-        if(arr[i] == nama){
-            console.log(`${nama} sudah ada di dalam angkot`);
-            console.log(arr);
-            break;
-        } else if (arr[i] == undefined){
-            arr[i] = nama;
-            console.log(arr);
-            break;
-        }
+    this.tambahPenumpang = function(nama){
+        this.penumpang.push(nama);
+
     }
-    arr.push(nama);
-    console.log(arr);
+    this.kurangPenumpang = function(nama){
+        for(let i=0; i<this.penumpang.length;i++){
+            if(this.penumpang[i] == nama){
+                this.penumpang.splice(i, 1);
+                this.kas += 2000;
+                break;
+            }
+        } return console.log(`${nama} tidak ada dalam angkot`);
+    }
 }
+
+angkot1 = new Angkot("Wildan Mukmin", "Rajabasa - Karang", [], 0);
+
+
+angkot1.tambahPenumpang("rani");
+angkot1.tambahPenumpang("eka");
+angkot1.tambahPenumpang("mukmin");
+
+angkot1.kurangPenumpang("jamet");
+
+
+
+console.log(angkot1.penumpang.join(" "));
+console.log(angkot1.kas);
+
+
+
+
+
+
+
+
+
+
+
+// function Mahasiswa (nama, umur, jurusan){
+//     this.nama = nama;
+//     this.umur = umur;
+//     this.jurusan = jurusan;
+// }
+
+// const mhs1 = new Mahasiswa("wildan", 20, "ilmu komputer");
+// console.log(mhs1);
+// const mhs2 = new Mahasiswa("mukmin", 20, "ilmu komputer");
+// console.log(mhs2);
+    
+    
+// mhs1.jurusan = "informatika";
+// console.log(mhs1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const penumpang = [];
+
+// function tambahPenumpang (nama , arr){
+//     for(let i = 0; i < arr.length; i++){
+//         if(arr[i] == nama){
+//             console.log(`${nama} sudah ada di dalam angkot`);
+//             console.log(arr);
+//             break;
+//         } else if (arr[i] == undefined){
+//             arr[i] = nama;
+//             console.log(arr);
+//             break;
+//         }
+//     }
+//     arr.push(nama);
+//     console.log(arr);
+// }
 
 
 
