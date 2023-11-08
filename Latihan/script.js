@@ -1,37 +1,188 @@
-function Angkot (sopir, trayek, penumpang, kas){
-    this.sopir = sopir;
-    this.trayek = trayek;
-    this.penumpang = penumpang;
-    this.kas  = kas;
-
-    this.tambahPenumpang = function(nama){
-        this.penumpang.push(nama);
-
-    }
-    this.kurangPenumpang = function(nama){
-        for(let i=0; i<this.penumpang.length;i++){
-            if(this.penumpang[i] == nama){
-                this.penumpang.splice(i, 1);
-                this.kas += 2000;
-                break;
-            }
-        } return console.log(`${nama} tidak ada dalam angkot`);
-    }
-}
-
-angkot1 = new Angkot("Wildan Mukmin", "Rajabasa - Karang", [], 0);
-
-
-angkot1.tambahPenumpang("rani");
-angkot1.tambahPenumpang("eka");
-angkot1.tambahPenumpang("mukmin");
-
-angkot1.kurangPenumpang("jamet");
+console.log("satu");
+setTimeout(() => {
+    console.log("dua");
+} , 10000)
+console.log("tiga");
 
 
 
-console.log(angkot1.penumpang.join(" "));
-console.log(angkot1.kas);
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const nama = "wildan mukmin";
+// const umur = 20;
+
+// function highlight(params, ...args) {
+//     return params.reduce((result, ekspesi, i) => `${result}${ekspesi}${args[i] || ""}`,'');
+// }
+
+
+
+// const str = highlight`Halo, nama saya ${nama}, saya ${umur} tahun.`;
+// console.log(str);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const angka = [-1,8,9,1,4,-5,-4,3,2,9];
+
+// const baru = angka.filter((a) => {
+//     return a >= 3;
+// });
+
+// // for (let i = 0; i < angka.length; i++) {
+// //     if(angka[i] >= 3 ){
+// //         baru.push(angka[i]);
+// //     }
+// // }
+
+// console.log(baru.join(' '));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let count = (function (){
+//     let counter = 0;
+//     return function add(){
+//         return ++counter;
+//     }
+// })     ();
+
+
+
+// // let menghitung = count();
+
+// console.log(count());
+// console.log(count());
+// console.log(count());
+// console.log(count());
+// console.log(count());
+// console.log(count());
+// console.log(count());
+// console.log(count());
+// console.log(count());
+// console.log(count());
+
+
+
+// function init(){
+//     let nama = "wildan";
+//     function halo(){
+//         console.log(nama);
+//     }
+//     halo();
+// }
+
+// init();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function Angkot (sopir, trayek, penumpang, kas){
+//     this.sopir = sopir;
+//     this.trayek = trayek;
+//     this.penumpang = penumpang;
+//     this.kas  = kas;
+
+//     this.tambahPenumpang = function(nama){
+//         this.penumpang.push(nama);
+
+//     }
+//     this.kurangPenumpang = function(nama){
+//         for(let i=0; i<this.penumpang.length;i++){
+//             if(this.penumpang[i] == nama){
+//                 this.penumpang.splice(i, 1);
+//                 this.kas += 2000;
+//                 break;
+//             }
+//         } return console.log(`${nama} tidak ada dalam angkot`);
+//     }
+// }
+
+// angkot1 = new Angkot("Wildan Mukmin", "Rajabasa - Karang", [], 0);
+
+
+// angkot1.tambahPenumpang("rani");
+// angkot1.tambahPenumpang("eka");
+// angkot1.tambahPenumpang("mukmin");
+
+// angkot1.kurangPenumpang("jamet");
+
+
+
+// console.log(angkot1.penumpang.join(" "));
+// console.log(angkot1.kas);
 
 
 
