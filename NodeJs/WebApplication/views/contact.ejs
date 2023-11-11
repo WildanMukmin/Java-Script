@@ -1,5 +1,37 @@
 <%- include("layouts/header") %>
-  <main class="container text-center">
-    <h1>My Contact</h1>
+
+  <main class="container mt-4">
+    <h1 class="text-center">My Contact</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Nama</th>
+          <th scope="col">Nomor</th>
+          <th scope="col">Email</th>
+          <th scope="col">Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% contacts.forEach((e,i)=> { %>
+          <tr>
+            <th scope="row">
+              <%= i+1 %>
+            </th>
+            <td>
+              <%= e.nama %>
+            </td>
+            <td>
+              <%= e.nohp %>
+            </td>
+            <td>
+              <%= e.email %>
+            </td>
+            <td><a href="" class="btn btn-primary badge text-bg-info">Deatil</a></td>
+          </tr>
+          <% }) %>
+      </tbody>
+    </table>
   </main>
+
   <%- include("layouts/footer") %>

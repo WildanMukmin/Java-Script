@@ -1,6 +1,9 @@
 const express = require("express");
+const contact = require("./utils/contacts");
 const app = express();
 const port = 3000;
+
+const contacts = contact.loadContact();
 
 //gunakan ejs
 app.set("view engine", "ejs");
@@ -14,6 +17,7 @@ app.get("/", (req, res) => {
 app.get("/contact", (req, res) => {
     res.render("contact", {
         title: "Halaman contact",
+        contacts: contacts,
     });
 });
 app.get("/about", (req, res) => {
