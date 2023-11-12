@@ -14,4 +14,24 @@ const loadContact = () => {
     const contacts = JSON.parse(fileBuffer);
     return contacts;
 };
-module.exports = { loadContact };
+
+const findContact = (nama) => {
+    const contacts = loadContact();
+    const contact = contacts.find((target) => {
+        return target.nama === nama;
+    });
+    return contact;
+};
+
+//menimpa data lama dnegan baru
+const saveContact = (contacts) => {
+    fs.writeFileSync("data/contacts.json", JSON.stringify(contacts), "utf8");
+};
+
+const addContact = (contact) => {
+    const contacts = loadContact();
+    contacts.push(contact);
+    saveContact(contacts);
+};
+
+module.exports = { loadContact, findContact, addContact };
