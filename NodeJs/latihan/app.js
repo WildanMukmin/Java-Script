@@ -1,8 +1,11 @@
+// set express
 const express = require("express");
 const app = express();
 
+// set ejs
 app.set("view engine", "ejs");
 
+// set routes
 app.get("/", (req, res) => {
     res.render("index", {
         tittle: "Halaman Index",
