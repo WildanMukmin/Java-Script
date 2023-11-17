@@ -2,11 +2,14 @@ const express = require("express");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const flash = require("connect-flash");
+const { validationResult, body, check } = require("express-validator");
 
 const app = express();
 const port = 3000;
 
 // set mongoose
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://127.0.0.1:27017/contact");
 const { ContactSchema } = require("./models/contactDb");
 
 // set middleware
@@ -31,7 +34,7 @@ const halaman = {
     root: "/",
     about: "/about",
     contact: "/contact",
-    addcontact: "/addcontact",
+    addContact: "/addContact",
 };
 
 // routes
@@ -76,3 +79,44 @@ app.get("/contact/:nama", async (req, res) => {
         contact,
     });
 });
+
+// halaman addContact
+app.get("/addContact", (req, res) => {
+    res.render("addContact", {
+        title: "Contact | Add Contact",
+        halaman,
+    });
+});
+
+// post method
+app.post(
+    "/contact",
+    [
+        body("nama").custom(async (value) => {
+            const duplikat = await ContactSchema.findOne({ nama: value });
+            if (duplikat) {
+                throw new Error("Nama sudah di gunakan");
+            }
+            return true;
+        }),
+        check("nohp", "Nomor ini tidak valid").isMobilePhone("id-ID"),
+        check("email", "Email ini tidak valid").isEmail(),
+    ],
+
+    (req, res) => {
+        const errors = validationResult(req);
+        console.log(errors.array());
+        if (!errors.isEmpty()) {
+            res.render("addContact", {
+                title: "Contact | Add Contact",
+                errors: errors.array(),
+                halaman,
+            });
+        } else {
+            const contact = new ContactSchema(req.body);
+            contact.save().then((result) => console.log(result));
+            req.flash("success_msg", "Contact successfully added");
+            res.redirect("/contact");
+        }
+    }
+);
