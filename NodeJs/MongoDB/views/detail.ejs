@@ -19,7 +19,15 @@
                         <p class="card-text">
                             <%= contact.nohp %>
                         </p>
-                        <a href="../contact" class="card-link"> &laquo;back to contact</a>
+                        <form action="/contact?_method=DELETE" method="POST" class="d-inline">
+                            <input type="hidden" name="nama" value="<%= contact.nama %>">
+                            <button type="submit" class="btn btn-danger badge">Delete Contact</button>
+                        </form>
+                        <form action="/editContact" method="GET" class="d-inline">
+                            <input type="hidden" name="nama" value="<%= contact.nama %>">
+                            <button type="submit" class="btn btn-primary badge">Edit Contact</button>
+                        </form>
+                        <a href="../contact" class="card-link d-block"> &laquo;back to contact</a>
                     </div>
                 </div>
                 <% } %>

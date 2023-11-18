@@ -3,6 +3,7 @@ const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const flash = require("connect-flash");
 const { validationResult, body, check } = require("express-validator");
+const methodOverride = require("method-override");
 
 const app = express();
 const port = 3000;
@@ -25,6 +26,7 @@ app.use(
     })
 );
 app.use(flash());
+app.use(methodOverride("_method"));
 
 // set ejs
 app.set("view engine", "ejs");
@@ -70,11 +72,21 @@ app.get("/contact", async (req, res) => {
     });
 });
 
-// halaman addcontact
+// halaman detail
 app.get("/contact/:nama", async (req, res) => {
     const contact = await ContactSchema.findOne({ nama: req.params.nama });
     res.render("detail", {
         title: "Contact | Detail",
+        halaman,
+        contact,
+    });
+});
+
+//halaman edit contact
+app.get("/editContact", (req, res) => {
+    const contact = ContactSchema.findOne({ nama: req.body.nama });
+    res.render("editContact", {
+        title: "Contact | Edit Contact",
         halaman,
         contact,
     });
@@ -113,10 +125,41 @@ app.post(
                 halaman,
             });
         } else {
-            const contact = new ContactSchema(req.body);
-            contact.save().then((result) => console.log(result));
+            ContactSchema.insertMany(req.body);
+            // const contact = new ContactSchema(req.body);
+            // contact.save().then((result) => console.log(result));
             req.flash("success_msg", "Contact successfully added");
             res.redirect("/contact");
         }
     }
 );
+
+// delete method
+app.delete("/contact", (req, res) => {
+    ContactSchema.deleteOne({ nama: req.body.nama })
+        .then((result) => {
+            console.log(result);
+            req.flash("success_msg", "Contact successfully deleted");
+            res.redirect("/contact");
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+});
+
+// method put
+app.put("/contact", (req, res) => {
+    ContactSchema.updateOne(
+        { nama: req.body.nama },
+        {
+            $set: {
+                nama: req.body.nama,
+                nohp: req.body.nohp,
+                email: req.body.email,
+            },
+        }
+    ).then((result) => {
+        req.flash("success_msg", "Contact successfully changed");
+        res.redirect("/contact");
+    });
+});
