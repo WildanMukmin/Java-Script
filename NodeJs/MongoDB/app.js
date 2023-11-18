@@ -83,8 +83,8 @@ app.get("/contact/:nama", async (req, res) => {
 });
 
 //halaman edit contact
-app.get("/editContact", (req, res) => {
-    const contact = ContactSchema.findOne({ nama: req.body.nama });
+app.post("/editContact", async (req, res) => {
+    const contact = await ContactSchema.findOne({ nama: req.body.nama });
     res.render("editContact", {
         title: "Contact | Edit Contact",
         halaman,
