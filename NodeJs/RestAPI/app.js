@@ -2,15 +2,12 @@ require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
-const userRouters = require("./routers/user");
+const userRoutes = require("./routers/user");
 // express app
 const app = express();
 
 // middleware
 app.use(express.urlencoded({ extended: true }));
-
-// routers
-app.use("/api/auth/", userRouters);
 
 // mongodb connect
 mongoose
@@ -23,3 +20,6 @@ mongoose
     .catch((error) => {
         console.error("Error connecting to MongoDB:", error.message);
     });
+
+// routers
+app.use("/api/user", userRoutes);

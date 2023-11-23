@@ -7,5 +7,8 @@ const singupUser = (req, res) => {
     res.send("ini singup").status(200);
     console.log("ini singup");
 };
+const test = (req, res) => {
+    res.send("ini test");
+};
 
-module.exports = { singupUser, loginUser };
+module.exports = { singupUser, loginUser, test };
