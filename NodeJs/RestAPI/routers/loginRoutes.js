@@ -7,12 +7,6 @@ const {
 } = require("../controllers/userController");
 
 // login page
-router.post("/login", loginUser);
-
-// singup page
-router.post("/singup", singupUser);
-
-// router test
-router.get("/", test);
+router.get("/", loginUser);
 
 module.exports = router;

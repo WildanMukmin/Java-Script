@@ -2,7 +2,8 @@ require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
-const userRoutes = require("./routers/user");
+const loginRoutes = require("./routers/loginRoutes");
+const singupRoutes = require("./routers/singupRoutes");
 // express app
 const app = express();
 
@@ -22,4 +23,5 @@ mongoose
     });
 
 // routers
-app.use("/api/user", userRoutes);
+app.use("/api/user/login", loginRoutes);
+app.use("/api/user/singup", singupRoutes);
