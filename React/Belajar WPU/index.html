@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const container = document.getElementById("root");
+      const root = ReactDOM.createRoot(container);
+      function Contoh({ mahasiswa, kelas, npm }) {
+        return (
+          <h1>
+            {" "}
+            hello {mahasiswa ? mahasiswa : "Siapa pun itu lah"} kamu kelas{" "}
+            {kelas ? kelas : "tidak terdaftar"} dan npm kamu{" "}
+            {npm ? npm : "npm belum terdaftar"}
+          </h1>
+        );
+      }
+
+      function DaftarNama() {
+        const names = ["Wildan Mukmin", "Empeb Aul", "Jamet Kriting"];
+        const [likes, setLikes] = React.useState(0);
+        function handleClick() {
+          setLikes(likes + 1);
+        }
+        function resetLikes() {
+          setLikes(likes - likes);
+        }
+        return (
+          <>
+            <ul>
+              {names.map((nama) => (
+                <li key={nama}>Hai kamu {nama}</li>
+              ))}
+            </ul>
+
+            <button onClick={handleClick}>Like({likes})</button>
+            <button onClick={resetLikes}>reset</button>
+          </>
+        );
+      }
+      function Latihan() {
+        const [likes, setLikes] = React.useState(0);
+        function tambahCount() {
+          setLikes(likes + 1);
+        }
+        function kurangCount() {
+          setLikes(likes - 1);
+        }
+        function resetCount() {
+          setLikes(likes - likes);
+        }
+        return(
+            <>
+                <button onClick={tambahCount}>+</button>
+                <p>{likes}</p>
+                <button onClick={kurangCount}>-</button>
+                <br/>
+                <button onClick={resetCount}>Reset</button>
+            </>
+        );
+      }
+
+      root.render(<Latihan />);
+    </script>
+  </body>
+</html>
