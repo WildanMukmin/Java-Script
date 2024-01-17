@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.nav-toggle > span:nth-child(1){
+    @apply  rotate-45 bg-satu;
+}
+.nav-toggle > span:nth-child(2){
+    @apply scale-0;
+}
+.nav-toggle > span:nth-child(3){
+    @apply  -rotate-45 bg-satu;
+}
+
+.style-link-nav-mobile{
+    @apply  px-1 py-2 text-sm font-bold text-tiga hover:text-dua hover:scale-105 transition duration-300 hover:shadow-lg flex ;
+}
+
+.style-link-nav-desktop{
+    @apply px-1 py-2 text-sm font-bold text-empat hover:underline hover:-translate-y-1 hover:opacity-70 hover:scale-105 transition duration-300;
+}
+
+.style-link-icon {
+    @apply h-9 w-9 border-2 rounded-full justify-center flex items-center hover:border-tiga hover:bg-dua text-empat shadow-xl;
+}
+
+.style-link-icon-svg{
+    @apply w-[20px] h-[20px] group-hover:fill-current;
+}

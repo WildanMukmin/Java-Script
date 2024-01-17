@@ -60,11 +60,11 @@
         }
         return(
             <>
-                <button onClick={tambahCount}>+</button>
-                <p>{likes}</p>
-                <button onClick={kurangCount}>-</button>
+            <button onClick={kurangCount}>-</button>
+            <span style= {{margin : 50}}>{likes}</span>
+            <button onClick={tambahCount}>+</button>
                 <br/>
-                <button onClick={resetCount}>Reset</button>
+                <button onClick={resetCount} style={{margin : 50}}>Reset</button>
             </>
         );
       }

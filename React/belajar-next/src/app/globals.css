@@ -1,0 +1,242 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  margin: 0px;
+  padding : 0px;
+}
+
+.logo{
+  letter-spacing: 2px;
+}
+
+.navbarUtama{
+  display: flex;
+  background-color: rgb(173, 247, 247);
+  justify-content: space-around;
+  height: 40px;
+  align-items: center;
+}
+
+.mobile-view{
+  display: none;
+}
+.navbarKanan{
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px black solid; */
+  font-size: 0.8rem;
+}
+
+@media screen and (max-width : 768px){
+  .navbarKanan{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px black solid; */
+    font-size: 0.8rem;
+  }
+}
+
+
+@media screen and (max-width : 576px){
+  .navbarKanan{
+    display: none;
+
+  }
+
+  .mobile-view{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 15px;
+
+  }
+
+  .mobile-view-child{
+    display: block;
+    width: 20px;
+    height: 3px;
+
+    border-radius: 3px;
+
+    background-color: rgb(106, 123, 138);
+    
+  }
+}
+
+
+.footer{
+  background-color: rgb(71, 63, 60);
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  color: rgb(230, 219, 205);
+  font-size: 0.6rem;
+}
+
+.navOn{
+  color: rgb(49, 25, 181);
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  /* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contoh{
+  background-color: black;
+}
+.contoh2 {
+  background-color : blue;
+} */
+
+/* ----------------------------- bagian belajar flexbox ----------------------------- */
+/* 
+.container{
+  border: 2px solid black ;
+  margin: 30px auto;
+  padding: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+  margin: 2px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.satu {
+  order: 2;
+}
+
+.dua {
+  order: 1;
+}
+
+.tiga {
+  order: 5;
+}
+
+.empat {
+  order: 4;
+}
+
+.lima {
+  order: 3;
+} */
+
+/* ----------------------------- bagian Latihan flexbox ----------------------------- */
+
+/* html , body {
+  margin: 0px;
+  padding: 0px;
+}
+
+body{
+  line-height: 1.65;
+  height: 100%;
+}
+
+.container{
+  display: flex ;
+}
+
+.side-bar-satu{
+  order: -1;
+}
+
+div{
+  margin: 5px 10px;
+} */
