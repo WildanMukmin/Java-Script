@@ -3,7 +3,11 @@ import Link from "next/link";
 
 export default function Linkedin() {
   return (
-    <Link href="#" target="_blank" className="style-link-icon group">
+    <Link
+      href="https://www.linkedin.com/in/wildan-mukmin-7569422a7/"
+      target="_blank"
+      className="style-link-icon group"
+    >
       <svg
         role="img"
         viewBox="0 0 24 24"

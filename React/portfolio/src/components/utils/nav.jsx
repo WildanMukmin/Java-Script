@@ -13,7 +13,7 @@ export default function Nav() {
       <Link href="#" className="style-link-nav-desktop ">
         Portfolio
       </Link>
-      <Link href="#" className="style-link-nav-desktop ">
+      <Link href="#myskils" className="style-link-nav-desktop ">
         MySkils
       </Link>
       <Link href="#" className="style-link-nav-desktop ">

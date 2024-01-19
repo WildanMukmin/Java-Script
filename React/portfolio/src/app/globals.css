@@ -14,11 +14,11 @@
 }
 
 .style-link-nav-mobile{
-    @apply  px-1 py-2 text-sm font-bold text-tiga hover:text-dua hover:scale-105 transition duration-300 hover:shadow-lg flex ;
+    @apply  px-1 py-2 text-sm font-bold text-tiga hover:text-dua hover:scale-105 transition duration-300  flex ;
 }
 
 .style-link-nav-desktop{
-    @apply px-1 py-2 text-sm font-bold text-empat hover:underline hover:-translate-y-1 hover:opacity-70 hover:scale-105 transition duration-300;
+    @apply px-1 py-2 text-sm font-bold text-dua hover:underline hover:-translate-y-1 hover:opacity-70 hover:scale-105 transition duration-300;
 }
 
 .style-link-icon {

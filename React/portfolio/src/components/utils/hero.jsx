@@ -21,13 +21,6 @@ export default function Hero() {
               Hidup itu seperti air yang mengalir, mengalir sampai nganu. dan
               cita cita saya ingin punya duit banyak
             </p>
-            <Link
-              href="https://github.com/WildanMukmin"
-              target="_blank"
-              className="font-bold bg-dua hover:opacity-90 duration-300 transition shadow-lg rounded-full px-3 py-1 text-[10px] md:text-[13px] lg:text-[15px] text-white md:px-4 md:py-1"
-            >
-              Hubungi saya
-            </Link>
           </div>
           <div className="w-full lg:w-1/2 self-end px-4">
             <div className="mt-10 relative">
@@ -35,8 +28,8 @@ export default function Hero() {
                 src="/wildan.png"
                 alt="Foto Wildan"
                 className="max-w-full mx-auto "
-                width={400}
-                height={400}
+                width={600}
+                height={600}
                 priority
               />
               <span className="absolute bottom-10 -z-10 left-1/2 -translate-x-1/2">
@@ -47,7 +40,7 @@ export default function Hero() {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill="#525CEB"
+                    fill="#BFCFE7"
                     d="M34.6,-29.6C51.2,-17.9,75.4,-9,81.5,6C87.5,21,75.3,42.1,58.7,58.7C42.1,75.3,21,87.5,0.4,87.1C-20.2,86.7,-40.4,73.6,-55,57C-69.6,40.4,-78.7,20.2,-80,-1.3C-81.3,-22.8,-74.8,-45.5,-60.2,-57.2C-45.5,-68.8,-22.8,-69.4,-6.9,-62.5C9,-55.6,17.9,-41.2,34.6,-29.6Z"
                     transform="translate(100 100) scale(1.2)"
                   />

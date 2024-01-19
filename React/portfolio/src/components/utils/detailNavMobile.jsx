@@ -13,7 +13,7 @@ export default function DetailNavMobile() {
       <Link href="#" className="style-link-nav-mobile">
         <div>Portfolio</div>
       </Link>
-      <Link href="#" className="style-link-nav-mobile">
+      <Link href="#myskils" className="style-link-nav-mobile">
         <div>MySkils</div>
       </Link>
       <Link href="#" className="style-link-nav-mobile">

@@ -3,7 +3,11 @@ import Link from "next/link";
 
 export default function Facebook() {
   return (
-    <Link href="#" target="_blank" className="style-link-icon group">
+    <Link
+      href="https://www.facebook.com/wildan.nnnn/"
+      target="_blank"
+      className="style-link-icon group"
+    >
       <svg
         role="img"
         viewBox="0 0 24 24"

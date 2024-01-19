@@ -5,7 +5,7 @@ import Nav from "./utils/nav";
 
 export default function Header() {
   return (
-    <header className="flex bg-dua mb-6">
+    <header className="flex bg-tiga mb-6">
       <div className="container mx-auto">
         <div className="flex items-center justify-between relative ">
           <div>
